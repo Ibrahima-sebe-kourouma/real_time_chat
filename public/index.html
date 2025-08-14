@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat - Accueil</title>
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+
+    <h2>Bienvenue sur le Chat !</h2>
+
+    <!-- Bouton de logout -->
+    <div style="text-align:center; margin-bottom: 20px;">
+        <button id="logoutBtn">Se déconnecter</button>
+    </div>
+
+    <!-- Messages -->
+    <div id="messages"></div>
+
+    <!-- Formulaire d'envoi -->
+    <form id="messageForm">
+        <div id="controls">
+            <!-- Sélecteur destinataire pour messages privés -->
+            <select id="receiverSelect">
+                <option value="">Chat public</option>
+                <!-- Les options seront remplies dynamiquement avec les utilisateurs connectés -->
+            </select>
+
+            <!-- Input pour envoyer une image -->
+            <input type="file" id="imageInput" accept="image/*">
+
+            <!-- Input texte pour message -->
+            <input type="text" id="messageInput" placeholder="Écris un message..." autocomplete="off">
+
+            <!-- Bouton envoyer -->
+            <button type="submit" id="sendBtn">Envoyer</button>
+        </div>
+    </form>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

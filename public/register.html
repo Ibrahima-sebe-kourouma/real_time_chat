@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inscription</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="register-container">
+        <h2>Inscription</h2>
+        <p class="subtitle">Créez votre nouveau compte</p>
+        
+        <form id="registerForm">
+            <input type="text" id="username" placeholder="Nom d'utilisateur" required>
+            <input type="email" id="email" placeholder="Adresse email" required>
+            <input type="text" id="fullname" placeholder="Nom complet (facultatif)">
+            <input type="password" id="password" placeholder="Mot de passe" required>
+            
+            <!-- Aperçu de l'avatar -->
+            <img id="avatarPreview" class="avatar-preview" alt="Aperçu avatar">
+            
+            <!-- Upload d'avatar stylisé -->
+            <div class="file-upload-wrapper">
+                <input type="file" id="avatar" accept="image/*">
+                <label for="avatar" class="file-upload-label">
+                    <span class="file-upload-icon">📷</span>
+                    <span class="file-upload-text">Choisir une photo de profil</span>
+                </label>
+            </div>
+            
+            <button type="submit">S'inscrire</button>
+        </form>
+        
+        <p>Déjà inscrit ? <a href="login.html">Se connecter</a></p>
+    </div>
+    
+    <script>
+        // Script pour l'aperçu de l'avatar
+        document.getElementById('avatar').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const preview = document.getElementById('avatarPreview');
+            const label = document.querySelector('.file-upload-label');
+            const textSpan = document.querySelector('.file-upload-text');
+            
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.classList.add('show');
+                };
+                reader.readAsDataURL(file);
+                
+                label.classList.add('has-file');
+                textSpan.textContent = file.name;
+            }
+        });
+    </script>
+    <script src="js/register.js"></script>
+</body>
+</html>

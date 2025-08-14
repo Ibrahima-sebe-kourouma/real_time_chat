@@ -1,0 +1,56 @@
+Rapport de projet : Chat en temps réel
+Fonctionnalités développées
+
+Gestion des utilisateurs
+
+Création de compte avec username, email, fullname, password et avatar.
+
+Authentification sécurisée avec bcrypt.
+
+Messagerie
+
+Envoi et réception de messages texte.
+
+Gestion des messages privés et publics.
+
+Possibilité d’ajouter une image en pièce jointe.
+
+Historique et affichage des messages
+
+Récupération de l’historique complet ou filtré par utilisateur.
+
+Messages privés visibles uniquement par l’expéditeur et le destinataire.
+
+Base de données SQLite
+
+Tables users et messages avec relations entre utilisateurs et messages.
+
+API REST et WebSocket
+
+POST /api/register → création de compte utilisateur.
+
+POST /api/login → connexion utilisateur.
+
+GET /api/messages → récupération des messages.
+
+WebSocket pour communication en temps réel entre clients.
+
+Interface Web
+
+Affichage des messages en direct.
+
+Sélecteur pour envoyer des messages privés ou publics.
+
+Gestion de l’affichage des avatars et des images attachées.
+
+Technologies utilisées
+
+Frontend : HTML, CSS, JavaScript
+
+Backend : Node.js, Express.js, HTTP, WebSocket
+
+Base de données : SQLite
+
+Sécurité : Bcrypt pour le hachage des mots de passe
+
+Autres : Session Express pour la gestion des utilisateurs connectés
